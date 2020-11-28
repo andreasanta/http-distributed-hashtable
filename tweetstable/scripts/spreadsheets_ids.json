@@ -1,0 +1,48 @@
+{
+  "malaga": {
+    "id": "1gGLzYkUN9MpcR5RAOjL8IwC2oBRCP-M6KK9_qgu9cL4",
+    "query": {
+        "_ticket": "#pabloalboran -is:retweet",
+        "_noticket": "#pabloalboran -is:retweet"
+      }
+  },
+  "bilbao": {
+
+  },
+  "valladolid": {
+
+  },
+  "barcelona": {
+
+  },
+  "sevilla": {
+
+  },
+  "coruna": {
+
+  },
+  "madrid": {
+
+  },
+  "valencia" : {
+
+  },
+  "laspalmas" : {
+
+  },
+  "santacruzdetenerife": {
+
+  },
+  "gijon": {
+
+  },
+  "palmademallorca" : {
+
+  },
+  "tarragona" : {
+
+  },
+  "alicante" : {
+
+  }
+}

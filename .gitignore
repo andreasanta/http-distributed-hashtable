@@ -1,0 +1,4 @@
+node_modules/
+dist/
+xmlhashtable/test/out/*
+.vscode

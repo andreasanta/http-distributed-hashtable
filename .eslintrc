@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "linebreak-style": 0,
+    "no-new": 0,
+    "no-plusplus": 0,
+    "no-use-before-define": 0,
+    "no-underscore-dangle": [2, { "allow": [], "allowAfterThis": true }]
+  },
+  "globals": {
+    "document": true,
+    "window": true,
+    "location": true
+  },
+  "env": {
+      "browser": true,
+      "node": true
+  }
+}
