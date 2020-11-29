@@ -130,6 +130,7 @@ describe('saveAllBuckets()', function () {
 
   });
 
+
   it('should generate one js file with 100k basic tweets', async function () {
 
     let hash = new YXMLHashtable();
@@ -269,7 +270,7 @@ describe('constructor()', function (done) {
     //let hash = new YXMLHashtable('http://images.samsung.com/is/content/samsung/p5/es/test/test_tweets_');
 
     hash.loadAllBuckets()
-        .then(done);
+        .then(function () { done() });
 
   });
 });
@@ -332,53 +333,53 @@ describe('*randomLoadedBuckets()', function () {
 
 describe('retrieveRandom()', function () {
 
-  it ('should return zero items', () => {
+  it ('should return zero items', async () => {
     let hash = new YXMLHashtable();
-    let retrieved = hash.retrieveRandom(10);
+    let retrieved = await hash.retrieveRandom(10);
 
     expect(retrieved.length).to.equal(0);
   });
 
-  it ('should return 1 item', () => {
+  it ('should return 1 item',  async () => {
     let hash = new YXMLHashtable('file://' + __dirname + '/out/test_tweets_');
-    let retrieved = hash.retrieveRandom(1);
+    let retrieved = await hash.retrieveRandom(1);
 
     expect(retrieved.length).to.equal(1);
   });
 
-  it ('should return 12 item', () => {
+  it ('should return 12 item', async () => {
     let hash = new YXMLHashtable('file://' + __dirname + '/out/test_tweets_');
-    let retrieved = hash.retrieveRandom(12);
+    let retrieved = await hash.retrieveRandom(12);
 
     expect(retrieved.length).to.equal(12);
   });
 
-  it ('should return 10 items from pre-loaded buckets', () => {
+  it ('should return 10 items from pre-loaded buckets', async () => {
 
     let hash = new YXMLHashtable('file://' + __dirname + '/out/test_tweets_', 25);
     hash.loadAllBuckets();
 
-    let retrieved = hash.retrieveRandom(10);
+    let retrieved = await hash.retrieveRandom(10);
 
     expect(retrieved.length).to.equal(10);
   });
 
-  it ('should return 258 items from pre-loaded buckets', () => {
+  it ('should return 258 items from pre-loaded buckets', async () => {
 
     let hash = new YXMLHashtable('file://' + __dirname + '/out/test_tweets_');
     hash.loadAllBuckets();
 
-    let retrieved = hash.retrieveRandom(258);
+    let retrieved = await hash.retrieveRandom(258);
 
     expect(retrieved.length).to.equal(258);
   });
 
-  it ('should attempt to get 1500 items from pre-loaded buckets, but starves at 1000 on purpose', () => {
+  it ('should attempt to get 1500 items from pre-loaded buckets, but starves at 1000 on purpose', async () => {
 
     let hash = new YXMLHashtable('file://' + __dirname + '/out/test_tweets_');
     hash.loadAllBuckets();
 
-    let retrieved = hash.retrieveRandom(1500);
+    let retrieved = await hash.retrieveRandom(1500);
 
     expect(retrieved.length).to.be.at.most(1000);
   });
