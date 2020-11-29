@@ -9,7 +9,7 @@
       "url": "https://andreasanta.com/"
     }
   ],
-  "description": "A JavaScript Hashtable implementation backed by JSON files only.",
+  "description": "A JavaScript Hashtable implementation backed by XML files only.",
   "homepage": "https://github.com/andreasanta/http-distributed-hashtable",
   "repository": {
     "type": "git",
